@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const controller = require('./controllers/tskController')
 
-router.get('/', (req, res)=> res.status(200).send("Home"))
-router.get('/router', (req, res)=> res.status(200).send("Router ok!"))
+router.get('/tasks', controller.getAll);
+
 
 
 module.exports = router;
