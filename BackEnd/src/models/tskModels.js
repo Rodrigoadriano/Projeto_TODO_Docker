@@ -6,7 +6,21 @@ const getAll = async()=> {
 
 };
 
+const createTask = async (task)=> {
+    const { title } = task;
+    const dateUTC = new Date(Date.now).toUTCString();
+    const status = "Pendente";
+
+    const query = 'INSERT INTO tasks(title, status, create_at) VALUES (?, ? ,?)'
+
+    const [resultado] = await connection.execute(query,title,status,dateUTC);
+    return resultado;
+    
+
+};
+
 
 module.exports  = {
-    getAll
+    getAll,
+    createTask
 };
