@@ -20,8 +20,19 @@ const createTask = async (task)=> {
 
 };
 
+const deleteTask = async (id) =>{
+    
+    const query = 'DELETE FROM tasks WHERE id= ?';
+
+    const [resultado] = await connection.execute(query,[id]);
+
+    return resultado;
+
+};
+
 
 module.exports  = {
     getAll,
-    createTask
+    createTask,
+    deleteTask
 };

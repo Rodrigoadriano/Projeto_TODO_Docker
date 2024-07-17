@@ -1,5 +1,3 @@
-const { response } = require("../app");
-
 const BodyValidade = (req, res, nxt)=>{
     const { body } = req;
     
