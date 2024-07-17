@@ -8,12 +8,13 @@ const getAll = async()=> {
 
 const createTask = async (task)=> {
     const { title } = task;
-    const dateUTC = new Date(Date.now).toUTCString();
+    const dateUTC = new Date(Date.now()).toUTCString();
     const status = "Pendente";
 
-    const query = 'INSERT INTO tasks(title, status, create_at) VALUES (?, ? ,?)'
+    const query = 'INSERT INTO tasks(title, status, created_at) VALUES (?, ? ,?)'
 
-    const [resultado] = await connection.execute(query,title,status,dateUTC);
+    const [resultado] = await connection.execute(query,[title,status,dateUTC]);
+    
     return resultado;
     
 
