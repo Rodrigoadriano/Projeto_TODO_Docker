@@ -15,7 +15,7 @@ const createTask = async (task)=> {
 
     const [resultado] = await connection.execute(query,[title,status,dateUTC]);
     
-    return resultado;
+    return {'IDinserido': resultado.insertId};
     
 
 };

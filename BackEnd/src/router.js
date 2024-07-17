@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('./controllers/tskController')
+const middleware = require('./middlewares/tksMiddleware')
 
 router.get('/tasks', controller.getAll);
-router.post('/tasks', controller.createTask);
+router.post('/tasks', middleware.BodyValidade ,  controller.createTask);
 
 
 
