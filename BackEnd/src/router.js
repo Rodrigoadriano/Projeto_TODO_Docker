@@ -5,7 +5,7 @@ const middleware = require('./middlewares/tksMiddleware')
 
 router.get('/tasks', controller.getAll);
 router.post('/tasks', middleware.BodyValidade ,  controller.createTask);
-router.delete('/tasks' , controller.deleteTask);
+router.delete('/tasks/:id' , controller.deleteTask);
 
 
 

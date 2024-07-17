@@ -15,7 +15,7 @@ const createTask = async (req,res)=>{
 };
 
 const deleteTask = async (req, res)=>{
-    const {id} = req.body;
+    const {id} = req.params;
 
     const tks = await taskModel.deleteTask(id);
     return res.status(200).json(`ID ${id} deleted!`)
