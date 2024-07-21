@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Sevillana&family=Varela+Round&display=swap');
+
+body{
+    background-color: rgb(22, 34, 61);
+    color: azure;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round'
+}
+
+main {
+    background-color: rgb(6, 81, 143);
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    margin: 40px auto;
+    box-shadow: 0 4px  8px  rgba(31, 29, 29, 0.507);
+}
+
+.add-form{
+    display: flex;
+    margin-bottom: 50px;
+    gap: 15px;
+    width: 100%;
+}
+
+input{
+    width: 100%;
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+button[type="submit"]{
+    background-color: rgb(22, 34, 61);
+    height: 50px;
+    width: 50px;
+    border: none;
+    color: #DDD;
+    font-size: 1.7rem;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    padding: 10px 15px;
+    border: 1px solid #DDD;
+    text-align: center;
+
+}
+
+td {
+    color: #e0e4ec;
+    font-weight: 600;
+}
+
+tr:nth-child(even){
+    background-color: rgb(30, 97, 153);
+}
+
+select{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: capitalize;
+    background-color: rgb(237, 237, 237);
+    cursor: pointer;
+    
+}
+
+select:hover{
+    background-color: rgb(218, 207, 207);
+}
+
+.btn_action{
+    border: none;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+
+}
+
+.btn_action:nth-child(1){
+    background-color: orange;
+    margin-right: 5px;
+
+}
+.btn_action:nth-child(2){
+    background-color: rgb(237, 42, 42,0.9);
+    margin-right: 5px;
+
+}
