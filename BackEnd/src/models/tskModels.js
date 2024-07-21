@@ -1,8 +1,8 @@
 const connection = require("./connection")
 
 const getAll = async()=> {
-    const [tasks] = await connection.execute('SELECT * FROM tasks');
-    return tasks;
+    const  [tks] = await connection.execute('SELECT * FROM tasks');
+    return tks;
 
 };
 
@@ -15,7 +15,7 @@ const createTask = async (task)=> {
 
     const [resultado] = await connection.execute(query,[title,status,dateUTC]);
     
-    return {'IDinserido': resultado.insertId};
+    return {'Message': `Task: ${title} adicionada, ID: ${resultado.insertId}`};
     
 
 };
