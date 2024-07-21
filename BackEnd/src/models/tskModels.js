@@ -29,8 +29,8 @@ const deleteTask = async (id) =>{
     return resultado;
 
 };
-const updateTask = async (id, task) =>{
-    const {title, status} = task;
+const updateTask = async (id, title, status) =>{
+    
     
     const query = 'UPDATE tasks SET title= ?, status= ? WHERE id= ?';
 
