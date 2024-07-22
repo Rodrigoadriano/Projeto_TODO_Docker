@@ -3,9 +3,17 @@ const fetchTask = async ()=> {
     const tks = await res.json();
     return tks;
 };
-
-const AddTask = async ()=>{
-    console.log("AddTask ok!")
+const form = document.querySelector(".add-form")
+const AddTask = async (event)=>{
+    event.preventDefault();
+    const tks = document.querySelector('.place').value
+    
+    const bodytask = {title: tks};
+    await fetch('http://localhost:3333/tasks', {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(bodytask)
+    })
 
 };
 
@@ -75,5 +83,7 @@ const Loadtasks =async ()=>{
         tbody.appendChild(row)
     });
 };
-const form = document.querySelector()
+
+form.addEventListener('submit' , AddTask)
+ 
 Loadtasks();
