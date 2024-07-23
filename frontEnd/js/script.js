@@ -1,5 +1,8 @@
+const TaskURL = "http://192.168.0.100:3333/tasks"
+
 const fetchTask = async ()=> {
-    const res = await fetch('http://localhost:3333/tasks')
+    //const res = await fetch('http://localhost:3333/tasks')
+    const res = await fetch(TaskURL);
     const tks = await res.json();
     return tks;
 };
@@ -9,7 +12,7 @@ const AddTask = async (event)=>{
     const tks = document.querySelector('.place').value
     
     const bodytask = {title: tks};
-    await fetch('http://localhost:3333/tasks', {
+    await fetch(TaskURL, {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(bodytask)
@@ -76,6 +79,7 @@ const createRow = (task) =>{
 };
 
 const Loadtasks =async ()=>{
+    console.log("task Load")
     const tbody = document.querySelector('tbody');
     const tasks = await fetchTask();
     tasks.forEach(element => {
@@ -85,5 +89,5 @@ const Loadtasks =async ()=>{
 };
 
 form.addEventListener('submit' , AddTask)
- 
-Loadtasks();
+
+Loadtasks()
