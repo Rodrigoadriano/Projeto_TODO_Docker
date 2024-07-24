@@ -52,12 +52,16 @@ const createRow = (task) =>{
         return select;
         
     };
-
+    const FormatDate = (UTC)=>{
+        const options = {dateStyle: 'long', timeStyle: 'short'};
+        const date = new Date(UTC).toLocaleString('pt-br',options);
+        return date;
+    };
    const  {id , title, created_at , status} = task;
    const tr = NovoElemento('tr');
 
    const tdTitle = NovoElemento('td',title);
-   const tdCreate = NovoElemento('td' , created_at)
+   const tdCreate = NovoElemento('td' , FormatDate(created_at));
    const tdStatus = NovoElemento('td');
    const tdActions = NovoElemento('td');
 
@@ -84,6 +88,7 @@ const createRow = (task) =>{
 const Loadtasks =async ()=>{
     console.log("task Load")
     const tbody = document.querySelector('tbody');
+    tbody.innerHTML = '';
     const tasks = await fetchTask();
     tasks.forEach(element => {
         const row = createRow(element);
