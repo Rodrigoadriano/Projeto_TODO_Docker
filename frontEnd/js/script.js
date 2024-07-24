@@ -6,6 +6,7 @@ const fetchTask = async ()=> {
     return tks;
 };
 const form = document.querySelector(".add-form")
+
 const AddTask = async (event)=>{
     event.preventDefault();
     const tks = document.querySelector('.place').value
@@ -23,6 +24,24 @@ const AddTask = async (event)=>{
     Loadtasks();
 };
 
+const DeleteTask = async  (id)=> {
+    const URLdelete =  TaskURL +'/'+ id;
+    await fetch(URLdelete, {
+        method: 'delete'
+    })
+    Loadtasks();
+
+};
+
+const UpdateTask = async ( {id , title , status})=>{
+    const URLUpdate =  TaskURL +'/'+ id;
+    await fetch(URLUpdate, {
+        method: 'put',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({title,status})
+    })
+    Loadtasks();
+};
 
 const createRow = (task) =>{
     
@@ -67,15 +86,17 @@ const createRow = (task) =>{
 
    const valores = CreateSelect(status);
    tdStatus.appendChild(valores);
-
+   tdStatus.addEventListener('change',({target})=>{UpdateTask({...task, status: target.value })}) 
 
    const  btn = NovoElemento("Button" ,'', "<span class='material-symbols-outlined'>edit_note</span>")
    const  btn2 = NovoElemento("Button" ,'', "<span class='material-symbols-outlined'>delete_forever</span>")
    btn.classList.add('btn_action')
    btn2.classList.add('btn_action')
-   
+   btn2.addEventListener('click', ()=> DeleteTask(id));
    tdActions.appendChild(btn) 
    tdActions.appendChild(btn2) 
+
+
 
 
    tr.appendChild(tdTitle);
