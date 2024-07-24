@@ -1,7 +1,6 @@
 const TaskURL = "http://192.168.0.100:3333/tasks"
 
 const fetchTask = async ()=> {
-    //const res = await fetch('http://localhost:3333/tasks')
     const res = await fetch(TaskURL);
     const tks = await res.json();
     return tks;
@@ -94,4 +93,4 @@ const Loadtasks =async ()=>{
 
 form.addEventListener('submit' , AddTask)
 
-Loadtasks()
+Loadtasks();
