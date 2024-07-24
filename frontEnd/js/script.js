@@ -12,12 +12,16 @@ const AddTask = async (event)=>{
     const tks = document.querySelector('.place').value
     
     const bodytask = {title: tks};
+
     await fetch(TaskURL, {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(bodytask)
+      
     })
+    document.querySelector('.place').value = ''
 
+    Loadtasks();
 };
 
 
