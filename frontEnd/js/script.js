@@ -88,13 +88,31 @@ const createRow = (task) =>{
    tdStatus.appendChild(valores);
    tdStatus.addEventListener('change',({target})=>{UpdateTask({...task, status: target.value })}) 
 
-   const  btn = NovoElemento("Button" ,'', "<span class='material-symbols-outlined'>edit_note</span>")
-   const  btn2 = NovoElemento("Button" ,'', "<span class='material-symbols-outlined'>delete_forever</span>")
-   btn.classList.add('btn_action')
-   btn2.classList.add('btn_action')
-   btn2.addEventListener('click', ()=> DeleteTask(id));
-   tdActions.appendChild(btn) 
-   tdActions.appendChild(btn2) 
+   const  btn_edit = NovoElemento("Button" ,'', "<span class='material-symbols-outlined'>edit_note</span>")
+   const  btn_delete = NovoElemento("Button" ,'', "<span class='material-symbols-outlined'>delete_forever</span>")
+   btn_delete.classList.add('btn_action')
+   btn_edit.classList.add('btn_action')
+   btn_delete.addEventListener('click', ()=> DeleteTask(id));
+   btn_edit.addEventListener('click', ()=>{
+    tdTitle.innerText = "";
+    tdTitle.appendChild(editForm);
+   })
+   
+
+   const editForm = NovoElemento('form');
+   const editImput = NovoElemento('input');
+   editImput.value = title;
+   editForm.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    UpdateTask({...task, title : editImput.value});
+    
+})
+   editForm.appendChild(editImput);
+   
+   
+   
+   tdActions.appendChild(btn_edit) 
+   tdActions.appendChild(btn_delete) 
 
 
 
