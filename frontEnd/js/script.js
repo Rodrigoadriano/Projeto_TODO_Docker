@@ -115,12 +115,8 @@ const createRow = (task) =>{
    tdActions.appendChild(btn_delete) 
 
 
-
+ 
    tr.append(tdTitle,tdCreate, tdStatus, tdActions);
-   //tr.appendChild(tdTitle);
-   //tr.appendChild(tdCreate);
-   //tr.appendChild(tdStatus);
-   //tr.appendChild(tdActions);
    return tr;   
 };
 
