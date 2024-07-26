@@ -98,11 +98,11 @@ const createRow = (task) =>{
 
 
 
-
-   tr.appendChild(tdTitle);
-   tr.appendChild(tdCreate);
-   tr.appendChild(tdStatus);
-   tr.appendChild(tdActions);
+   tr.append(tdTitle,tdCreate, tdStatus, tdActions);
+   //tr.appendChild(tdTitle);
+   //tr.appendChild(tdCreate);
+   //tr.appendChild(tdStatus);
+   //tr.appendChild(tdActions);
    return tr;   
 };
 
