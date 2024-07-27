@@ -2,9 +2,12 @@
 
 body{
     /*background-color: rgb(22, 34, 61);*/
-    background: linear-gradient(120deg, #15d3fd, #016586 );
-    
-    color: azure;
+
+    background: #3A1C71;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFAF7B, #D76D77, #3A1C71);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(120deg, #FFAF7B, #D76D77, #3A1C71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    height: 100dvh ;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,8 +19,8 @@ main {
     background: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     padding: 20px;
-    width: 90%;
-    margin: 40px auto;
+    width: 50%;
+    margin: 70px auto;
     box-shadow: 10px 10px 8px 2px  rgba(31, 29, 29, 0.507);
 }
 
@@ -29,7 +32,7 @@ main {
 }
 
 input{
-    width: 100%;
+    width: 80%;
     flex: 1;
     padding: 15px;
     border: 1px solid #DDD;
@@ -73,7 +76,7 @@ td {
 }
 
 tr:nth-child(even){
-    background-color: rgb(30, 97, 153);
+    background: rgba(0, 0, 0, 0.09);
 }
 
 select{
@@ -112,4 +115,18 @@ select:hover{
     background-color: rgb(237, 42, 42,0.9);
     margin-right: 5px;
 
+}
+
+
+@media screen and (max-width: 912px) {
+    main{
+
+        padding: 10px;
+        width: 90%;
+        margin: 70px auto;
+        font-size: small;
+
+
+    };
+    
 }
