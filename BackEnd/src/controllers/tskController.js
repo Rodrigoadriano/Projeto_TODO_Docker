@@ -2,9 +2,16 @@ const taskModel = require('../models/tskModels')
 
 
 const getAll = async (_req, res)=> {
-    const tks = await taskModel.getAll()
-    return res.status(200).json(tks);
+    try {
 
+        const tks = await taskModel.getAll()
+        return res.status(200).json(tks);
+    } catch (err){
+        console.log('Meu Erro' , err.code)
+        return res.status(500).json({error: err.code});
+
+    };
+        
 
 };
 

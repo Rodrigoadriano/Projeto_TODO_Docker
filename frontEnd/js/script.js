@@ -1,10 +1,26 @@
 const TaskURL = "http://192.168.0.100:3333/tasks"
 
 const fetchTask = async ()=> {
-    const res = await fetch(TaskURL);
-    const tks = await res.json();
-    return tks;
-};
+   
+        const res = await fetch(TaskURL);
+
+        if (res.status == 200){
+            const tks = await res.json();
+            return tks;
+        };
+
+        return {
+            error: res.status
+        }
+    };
+    
+
+    
+    
+
+
+
+
 const form = document.querySelector(".add-form")
 
 const AddTask = async (event)=>{
@@ -121,14 +137,26 @@ const createRow = (task) =>{
 };
 
 const Loadtasks =async ()=>{
-    console.log("task Load")
     const tbody = document.querySelector('tbody');
+    const ttable = document.querySelector('main');
     tbody.innerHTML = '';
     const tasks = await fetchTask();
-    tasks.forEach(element => {
+    if ('error' in tasks){
+        console.log('falha!')
+        const tr = document.createElement('div');
+        tr.innerText = "Ops, ocorreu um problema: Servidor Offline ou sem conexão!"
+        ttable.appendChild(tr);
+
+        
+    }else{
+        tasks.forEach(element => {
         const row = createRow(element);
         tbody.appendChild(row)
+
+
     });
+
+    };
 };
 
 form.addEventListener('submit' , AddTask)

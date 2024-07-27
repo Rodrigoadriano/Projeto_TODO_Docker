@@ -5,7 +5,6 @@ const USER =  process.env.SQL_USER
 const PASS =  process.env.SQL_PASS
 const DB =  process.env.SQL_DB
 
-console.log(HOST)
 
 const connection = mysql.createPool({
     host: HOST,
