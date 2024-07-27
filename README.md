@@ -1,7 +1,3 @@
-Claro! Aqui está um exemplo de README para o seu repositório no GitHub:
-
----
-
 # Projeto de Estudo ToDo com Node e Docker
 
 Bem-vindo ao meu projeto de estudo contínuo! Este repositório é dedicado a práticas e aplicações de conceitos fundamentais no desenvolvimento de APIs usando Node.js com Express e um servidor SQL rodando em Docker. No frontend, utilizei JavaScript Fetch para consumir a API e montar uma tabela HTML.
