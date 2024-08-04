@@ -39,7 +39,7 @@ O frontend faz uso da Fetch API para consumir os dados da API e renderizá-los e
 ### Pré-requisitos
 
 - Node.js
-- Docker
+- Docker.
 
 ## Créditos
 
