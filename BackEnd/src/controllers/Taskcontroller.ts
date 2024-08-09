@@ -1,7 +1,14 @@
 import TaskModels from '../models/taskModels';
 import { Request, Response } from 'express';
 
-class taskController {
+export interface ITaskController {
+    getAll(req: Request, res: Response): Promise<Response>;
+    createTask(req: Request, res: Response): Promise<Response>;
+    deleteTask(req: Request, res: Response): Promise<Response>;
+    updateTask(req: Request, res: Response): Promise<Response>;
+}
+
+class taskController extends ITaskController  {
 
     getAll = async (_req:Request, res:Response)=> {
         try {
