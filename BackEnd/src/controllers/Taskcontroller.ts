@@ -25,17 +25,28 @@ class taskController {
     };    
 
      deleteTask = async (req:Request, res:Response)=>{
-        const {id} = req.params;
-    
-        await TaskModels.deleteTask(id);
-        return res.status(200).json(`ID ${id} deleted!`)
+        try{
+
+            const {id} = req.params;
+            
+            await TaskModels.deleteTask(id);
+            return res.status(200).json(`ID ${id} deleted!`)
+        }catch(err:any){
+            return res.status(500).json({error: err.code});
+        };
     };
      updateTask = async (req:Request, res:Response)=>{
-        const {id} = req.params;
-        const {title, status} = req.body;
-    
-        await TaskModels.updateTask(id,title,status);
-        return res.status(204).json()
+
+        try{
+
+            const {id} = req.params;
+            const {title, status} = req.body;
+            
+            await TaskModels.updateTask(id,title,status);
+            return res.status(204).json()
+        }catch(err){
+            return res.status(500).json({error: err.code});
+        };
     };
 
 };
