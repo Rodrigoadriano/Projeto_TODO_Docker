@@ -1,6 +1,6 @@
 # Projeto de Estudo ToDo com Node e Docker
 
-Hi there! Este projeto é dedicado a práticas e aplicações de conceitos fundamentais no desenvolvimento de APIs usando Node.js com Express e um servidor SQL rodando em Docker. No frontend, utilizei JavaScript Fetch para consumir a API e montar uma tabela HTML.
+Hi there! Este projeto é dedicado a práticas e aplicações de conceitos fundamentais no desenvolvimento de APIs usando Node.js, Typescript, Express e um servidor SQL rodando em Docker. No frontend, utilizei JavaScript Fetch para consumir a API e montar uma tabela HTML.
 
 Prentendo quando possivel continuar usando essa base para treinar mais ferramentas e arquiteturas!
 
@@ -18,6 +18,7 @@ Este projeto tem como objetivo reforçar o aprendizado e a prática dos seguinte
 
 - **Node.js**
 - **Express**
+- **Typescript**
 - **Docker**
 - **SQL**
 - **JavaScript (Fetch API)**
