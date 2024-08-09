@@ -21,7 +21,7 @@ class taskController extends ITaskController  {
     
         };
         };
-    CreateTask = async(req:Request, res:Response)=>{
+    createTask = async(req:Request, res:Response)=>{
         try {
             const tks = await TaskModels.creationTask(req.body);
             return  res.status(201).json(tks);
