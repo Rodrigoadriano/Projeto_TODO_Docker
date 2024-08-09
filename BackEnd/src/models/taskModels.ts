@@ -3,9 +3,10 @@ import cnx from './connection'
 
 interface task{
     title:string
+    id:number
 };
 
-class TaskModels { 
+class TaskModels   { 
 
 
     getAll = async()=>{
@@ -26,6 +27,26 @@ class TaskModels {
     return {'Message': `Task: ${title} adicionada, ID: ${resultado.insertId}`};
         
 
+    };
+
+    deleteTask = async (id:string) =>{
+    
+        const query = 'DELETE FROM tasks WHERE id= ?';
+    
+        const [resultado] = await cnx.execute(query,[id]);
+    
+        return resultado;
+    
+    };
+    updateTask = async (id:string, title:string, status:string) =>{
+        
+        
+        const query = 'UPDATE tasks SET title= ?, status= ? WHERE id= ?';
+    
+        const [resultado] = await cnx.execute(query,[title, status ,id]);
+    
+        return resultado;
+    
     };
 
 

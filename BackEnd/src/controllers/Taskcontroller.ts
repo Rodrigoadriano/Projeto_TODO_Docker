@@ -24,6 +24,20 @@ class taskController {
             };
     };    
 
+     deleteTask = async (req:Request, res:Response)=>{
+        const {id} = req.params;
+    
+        await TaskModels.deleteTask(id);
+        return res.status(200).json(`ID ${id} deleted!`)
+    };
+     updateTask = async (req:Request, res:Response)=>{
+        const {id} = req.params;
+        const {title, status} = req.body;
+    
+        await TaskModels.updateTask(id,title,status);
+        return res.status(204).json()
+    };
+
 };
 
 export default new taskController();

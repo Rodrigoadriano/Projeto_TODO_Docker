@@ -2,7 +2,9 @@ import express from 'express';
 import Taskcontroller from './controllers/Taskcontroller';
 const router = express.Router();
 
-router.get('/test', Taskcontroller.getAll);
-router.post('/test', Taskcontroller.CreateTask);
+router.get('/tasks', Taskcontroller.getAll);
+router.post('/tasks', Taskcontroller.CreateTask);
+router.put('/tasks/:id', Taskcontroller.updateTask);
+router.delete('/tasks/:id', Taskcontroller.deleteTask);
 
 export default router;
